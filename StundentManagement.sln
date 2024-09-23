@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StundentManagement", "StundentManagement\StundentManagement.csproj", "{47BF4889-33FC-4445-B1E5-8563DF8EA367}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47BF4889-33FC-4445-B1E5-8563DF8EA367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47BF4889-33FC-4445-B1E5-8563DF8EA367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47BF4889-33FC-4445-B1E5-8563DF8EA367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47BF4889-33FC-4445-B1E5-8563DF8EA367}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {44504EF6-7DE5-43BC-8462-C82A51F9BE97}
+	EndGlobalSection
+EndGlobal
