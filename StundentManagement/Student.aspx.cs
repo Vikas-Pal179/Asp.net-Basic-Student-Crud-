@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -21,7 +22,7 @@ namespace StundentManagement
             int roll = Convert.ToInt32(rollNo.Text);
             string nam = name.Text;
             string clas = classs.Text;
-            string Course = course.Text;
+            string Course = course.SelectedValue;
             string Email = email.Text;
             string Mobile = mobile.Text;
             string Date = dob.Text; 
@@ -59,23 +60,25 @@ namespace StundentManagement
             SqlConnection connection = new SqlConnection(strConnectionString);
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connection;
-            cmd.CommandText = "select * from Student where rollno = " + Convert.ToInt32(rollNo.Text);
+            cmd.CommandText = "select * from Student where rollno = " +rollNo.Text;
             connection.Open();
-            SqlDataReader  reader  = cmd.ExecuteReader();
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            Response.Write(reader);
             if (reader.HasRows)
             {
-                if (reader.Read()) {
-                    Console.WriteLine("reader "+ reader["rollno"]);
-                    Console.WriteLine("reader "+ reader.ToString());
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+                GridView2.DataSource = dt;
+                GridView2.DataBind();
 
-                }
             }
             connection.Close();
             cmd.Dispose();
             connection.Dispose();
 
         }
-
+       
         protected void delete_Click(object sender, EventArgs e)
         {
             SqlConnection connection = new SqlConnection(strConnectionString); 

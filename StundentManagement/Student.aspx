@@ -22,7 +22,8 @@
         </div>
         <div>
             <asp:Label ID="Label5" runat="server" Text="Course"></asp:Label>
-            <asp:TextBox ID="course" runat="server"></asp:TextBox>
+            <asp:DropDownList ID="course" runat="server" DataSourceID="SqlDataSource1" DataTextField="course_name" DataValueField="course_name">
+            </asp:DropDownList>
         </div>
         <div>
             <asp:Label ID="Label6" runat="server" Text="Email"></asp:Label>
@@ -40,11 +41,15 @@
         <asp:Button ID="updateStudent" runat="server" OnClick="updateStudent_Click" Text="Update Student" />
 &nbsp;&nbsp;&nbsp;
         <asp:Button ID="search" runat="server" OnClick="search_Click" Text="Search" />
+        &nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="delete" runat="server" OnClick="delete_Click" style="height: 35px" Text="Delete" />
         <br />
         <br />
+        <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="true">
+        </asp:GridView>
         <br />
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ernollno" DataSourceID="SqlDataSource1">
+        <br />
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ernollno" DataSourceID="SqlDataSource2">
             <Columns>
                 <asp:BoundField DataField="ernollno" HeaderText="ernollno" InsertVisible="False" ReadOnly="True" SortExpression="ernollno" />
                 <asp:BoundField DataField="rollno" HeaderText="rollno" SortExpression="rollno" />
@@ -56,7 +61,8 @@
                 <asp:BoundField DataField="dob" HeaderText="dob" SortExpression="dob" />
             </Columns>
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:test-oneConnectionString %>" SelectCommand="SELECT * FROM [Student]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:test-oneConnectionString %>" SelectCommand="SELECT * FROM [Student]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:test-oneConnectionString %>" SelectCommand="SELECT * FROM [Course]"></asp:SqlDataSource>
         <br />
     </form>
     <p>
